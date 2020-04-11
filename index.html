@@ -309,6 +309,7 @@
 <blockquote>
 <p>hexo server</p>
 </blockquote>
+<p>进行服务启动，在浏览器中输入<br>（<a href="http://localhost:4000/）" target="_blank" rel="noopener">http://localhost:4000/）</a><br>就可以访问了，不过别急，这个还只是Hexo默认的风格哦，还需要进行一些个性化设置才符合自己的口味！</p>
 
       
 
@@ -380,7 +381,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="markdown-使用"><a href="#markdown-使用" class="headerlink" title="markdown 使用"></a>markdown 使用</h1><p>在 Markdown 中，标题使用你只需要在文本前面加上 # 即可，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加 # 即可，标题字号相应降低。例如：</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>注：# 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="# 一级标题"></a># 一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="##二级标题"></a>##二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="###三级标题"></a>###三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="####四级标题"></a>####四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="##### 五级标题"></a>##### 五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="###### 六级标题"></a>###### 六级标题</h6><p>注：# 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>你只需要在你希望引用的文字前面加上 &gt; 就好了。注：&gt; 和文本之间要保留一个字符的空格。例如：</p>
 <blockquote>
 <p>   你好 我们</p>
@@ -389,38 +390,22 @@
 <ul>
 <li>无序列表项</li>
 <li>无序列表项</li>
-<li>无序列表项<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2>在文字前面加上 1. 2. 3. 就可以了，例如：<ol>
+<li>无序列表项</li>
+</ul>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>在文字前面加上 1. 2. 3. 就可以了，例如：</p>
+<ol>
 <li>有序列表项1</li>
 <li>有序列表项2</li>
 <li>有序列表项3<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2></li>
 </ol>
-</li>
-</ul>
 <hr>
 <hr>
-<p>输入三个（及以上）* 或   -</p>
-<h1 id="代码引用"><a href="#代码引用" class="headerlink" title="代码引用"></a>代码引用</h1><hr>
-<p>title: markdown 使用<br>date: 2020-03-14 19:11:39<br>tags:</p>
-<hr>
-<h1 id="markdown-使用-1"><a href="#markdown-使用-1" class="headerlink" title="markdown 使用"></a>markdown 使用</h1><p>在 Markdown 中，标题使用你只需要在文本前面加上 # 即可，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加 # 即可，标题字号相应降低。例如：</p>
-<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题-1"><a href="#三级标题-1" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题-1"><a href="#四级标题-1" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题-1"><a href="#五级标题-1" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题-1"><a href="#六级标题-1" class="headerlink" title="六级标题"></a>六级标题</h6><p>注：# 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。</p>
-<h2 id="区块引用-1"><a href="#区块引用-1" class="headerlink" title="区块引用"></a>区块引用</h2><p>你只需要在你希望引用的文字前面加上 &gt; 就好了。注：&gt; 和文本之间要保留一个字符的空格。例如：</p>
 <blockquote>
-<p>   你好 我们</p>
+<p>|     —</p>
 </blockquote>
-<h2 id="无序列表-1"><a href="#无序列表-1" class="headerlink" title="无序列表"></a>无序列表</h2><p>你只需要在文字前面加上 -或* 就可以了，例如：</p>
-<ul>
-<li>无序列表项</li>
-<li>无序列表项</li>
-<li>无序列表项<h2 id="有序列表-1"><a href="#有序列表-1" class="headerlink" title="有序列表"></a>有序列表</h2>在文字前面加上 1. 2. 3. 就可以了，例如：<ol>
-<li>有序列表项1</li>
-<li>有序列表项2</li>
-<li>有序列表项3<h2 id="分隔线-1"><a href="#分隔线-1" class="headerlink" title="分隔线"></a>分隔线</h2></li>
-</ol>
-</li>
-</ul>
-<hr>
-<hr>
+<blockquote>
+<p>|     ***</p>
+</blockquote>
 <p>输入三个（及以上）* 或   -</p>
 
       
