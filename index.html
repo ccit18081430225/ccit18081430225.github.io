@@ -257,6 +257,173 @@
 
 
   
+    <article id="post-本地搭建和乔迁" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E4%B9%94%E8%BF%81/">搭建乔迁</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+
+
+
+        
+        <a href="/2020/05/12/%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E4%B9%94%E8%BF%81/" class="archive-article-date">
+  	<time datetime="2020-05-12T02:10:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+        
+      </header>
+    
+
+    
+
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="搭建博客，前期需要四个工具"><a href="#搭建博客，前期需要四个工具" class="headerlink" title="搭建博客，前期需要四个工具"></a>搭建博客，前期需要四个工具</h1><ul>
+<li>Hexo:Hexo快速、简洁且高效的博客框架</li>
+<li>Node.js:建立在Chrome上的JavaScript运行引擎</li>
+<li>Git:一款免费、开源的分布式版本控制系统</li>
+<li>GitHub:国内一款面向开发者的云端开发平台，提供代码托管，运行空间，质量控制，项目管理等功能</li>
+</ul>
+<hr>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><p>安装必要的配置环境，如果已经安装过，可以跳过</p>
+<ul>
+<li>1.1 安装Git</li>
+<li>1.2 安装Node.js</li>
+<li>1.3 GitHub账号注册</li>
+</ul>
+<p>注：安装步骤一路next即可。</p>
+<h3 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h3><ul>
+<li>CMD窗口输入命令</li>
+</ul>
+<blockquote>
+<p>npm install -g hexo</p>
+</blockquote>
+<p>安装完后选择一个目录新建文件夹blog，进入blog目录</p>
+<ul>
+<li>执行命令</li>
+</ul>
+<blockquote>
+<p>hexo init</p>
+</blockquote>
+<p>这个目录就是整个网站的根目录，以后所有的操作都在该目录下进行</p>
+<ul>
+<li>执行命令</li>
+</ul>
+<blockquote>
+<p>generate(或hexo g)</p>
+</blockquote>
+<p>生成静态页面</p>
+<ul>
+<li>再执行命令</li>
+</ul>
+<blockquote>
+<p>hexo server</p>
+</blockquote>
+<h1 id="一、Github的准备"><a href="#一、Github的准备" class="headerlink" title="一、Github的准备"></a>一、Github的准备</h1><ul>
+<li><p>注册Github：右上角的sign in是登录，sign up是注册。</p>
+</li>
+<li><p>新建仓库(Repository):点击create repository按钮。</p>
+</li>
+<li><p>注意仓库名称必须写为username.github.io 其中username是你注册Github使用的用户名。</p>
+</li>
+<li><p>查看仓库配置：点击仓库右上角的Settings选项。</p>
+</li>
+<li><p>提醒下：这个新建的仓库就是用来下面保存Hexo博客的各种资源文件的。</p>
+<h1 id="二、绑定Hexo和Github"><a href="#二、绑定Hexo和Github" class="headerlink" title="二、绑定Hexo和Github"></a>二、绑定Hexo和Github</h1><p>修改本地站点配置文件: 打开站点目录（blog）下的_config.yml文件，将最后一部分修改为</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">      type:  git</span><br><span class="line">      repo:  git@github.com:username&#x2F;username.github.io.git</span><br><span class="line">      branch:  master</span><br></pre></td></tr></table></figure>
+<p> 注意:上述冒号的后面都有一个空格。</p>
+<h2 id="安装关联hexo和git的工具"><a href="#安装关联hexo和git的工具" class="headerlink" title="安装关联hexo和git的工具:"></a>安装关联hexo和git的工具:</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
+
+<p>如果最后可以看到这个工具的版本号，则表明安装成功。</p>
+<h1 id="三、Hexo升天"><a href="#三、Hexo升天" class="headerlink" title="三、Hexo升天"></a>三、Hexo升天</h1><p>部署Hexo：执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这个命令会将本地博客根目录（blog）下public文件夹里的所有文件上传至Github上的username/username.github.io.git这个仓库。d:depoly 是部署的意思。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tag</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E4%B9%94%E8%BF%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-yilia评论系统gitment" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -831,173 +998,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/12/%E7%A4%BE%E4%BA%A4%E5%9B%BE%E6%A0%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-本地搭建和乔迁" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E4%B9%94%E8%BF%81/">搭建乔迁</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-
-
-
-        
-        <a href="/2020/04/12/%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E4%B9%94%E8%BF%81/" class="archive-article-date">
-  	<time datetime="2020-04-12T02:10:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-</a>
-        
-        
-      </header>
-    
-
-    
-
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="搭建博客，前期需要四个工具"><a href="#搭建博客，前期需要四个工具" class="headerlink" title="搭建博客，前期需要四个工具"></a>搭建博客，前期需要四个工具</h1><ul>
-<li>Hexo:Hexo快速、简洁且高效的博客框架</li>
-<li>Node.js:建立在Chrome上的JavaScript运行引擎</li>
-<li>Git:一款免费、开源的分布式版本控制系统</li>
-<li>GitHub:国内一款面向开发者的云端开发平台，提供代码托管，运行空间，质量控制，项目管理等功能</li>
-</ul>
-<hr>
-<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><p>安装必要的配置环境，如果已经安装过，可以跳过</p>
-<ul>
-<li>1.1 安装Git</li>
-<li>1.2 安装Node.js</li>
-<li>1.3 GitHub账号注册</li>
-</ul>
-<p>注：安装步骤一路next即可。</p>
-<h3 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h3><ul>
-<li>CMD窗口输入命令</li>
-</ul>
-<blockquote>
-<p>npm install -g hexo</p>
-</blockquote>
-<p>安装完后选择一个目录新建文件夹blog，进入blog目录</p>
-<ul>
-<li>执行命令</li>
-</ul>
-<blockquote>
-<p>hexo init</p>
-</blockquote>
-<p>这个目录就是整个网站的根目录，以后所有的操作都在该目录下进行</p>
-<ul>
-<li>执行命令</li>
-</ul>
-<blockquote>
-<p>generate(或hexo g)</p>
-</blockquote>
-<p>生成静态页面</p>
-<ul>
-<li>再执行命令</li>
-</ul>
-<blockquote>
-<p>hexo server</p>
-</blockquote>
-<h1 id="一、Github的准备"><a href="#一、Github的准备" class="headerlink" title="一、Github的准备"></a>一、Github的准备</h1><ul>
-<li><p>注册Github：右上角的sign in是登录，sign up是注册。</p>
-</li>
-<li><p>新建仓库(Repository):点击create repository按钮。</p>
-</li>
-<li><p>注意仓库名称必须写为username.github.io 其中username是你注册Github使用的用户名。</p>
-</li>
-<li><p>查看仓库配置：点击仓库右上角的Settings选项。</p>
-</li>
-<li><p>提醒下：这个新建的仓库就是用来下面保存Hexo博客的各种资源文件的。</p>
-<h1 id="二、绑定Hexo和Github"><a href="#二、绑定Hexo和Github" class="headerlink" title="二、绑定Hexo和Github"></a>二、绑定Hexo和Github</h1><p>修改本地站点配置文件: 打开站点目录（blog）下的_config.yml文件，将最后一部分修改为</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">      type:  git</span><br><span class="line">      repo:  git@github.com:username&#x2F;username.github.io.git</span><br><span class="line">      branch:  master</span><br></pre></td></tr></table></figure>
-<p> 注意:上述冒号的后面都有一个空格。</p>
-<h2 id="安装关联hexo和git的工具"><a href="#安装关联hexo和git的工具" class="headerlink" title="安装关联hexo和git的工具:"></a>安装关联hexo和git的工具:</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
-
-<p>如果最后可以看到这个工具的版本号，则表明安装成功。</p>
-<h1 id="三、Hexo升天"><a href="#三、Hexo升天" class="headerlink" title="三、Hexo升天"></a>三、Hexo升天</h1><p>部署Hexo：执行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>这个命令会将本地博客根目录（blog）下public文件夹里的所有文件上传至Github上的username/username.github.io.git这个仓库。d:depoly 是部署的意思。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tag</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E4%B9%94%E8%BF%81/">展开全文 >></a>
         </p>
       
 

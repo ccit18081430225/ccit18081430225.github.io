@@ -8,7 +8,7 @@ body {
     /* background-color:#fff; */
     min-height:100%;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-    url('http://pic1.win4000.com/wallpaper/5/517c934ae270f.jpg')  no-repeat 0% 0%/ cover;
+    url('http://qa3o5arop.bkt.clouddn.com/PE6%60ZLR%7BII73ZSD%7DU%28YAPH7.jpg') no-repeat 0% 0%/ cover;
 }
 
 
@@ -16,7 +16,7 @@ body {
  .left-col {
     /* background:#fff; */
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url('http://img1.imgtn.bdimg.com/it/u=3976304577,3196690244&fm=26&gp=0.jpg'); no-repeat 0% 20%/ cover;
+   /* url('http://qa3o5arop.bkt.clouddn.com/PE6%60ZLR%7BII73ZSD%7DU%28YAPH7.jpg');*/ no-repeat 0% 20%/ cover;
     width:300px;
     position:fixed;
     opacity:1;
