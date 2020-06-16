@@ -16,18 +16,18 @@
 <meta property="og:site_name" content="花泽菠菜Karry">
 <meta property="og:description" content="Gitment 是基于 GitHub Issues 的评论系统 1、注册auth application填写完毕后点击Register application 跳转到另外一个界面，这里可以得到一个Client ID和Client Secret 123456Application name:博客名字Homepage URL; 网站主页地址(这里我填写的是域名&#x2F;index.html大部分的默">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qa3o5arop.bkt.clouddn.com/oauth.png">
-<meta property="og:image" content="http://qa3o5arop.bkt.clouddn.com/hexo%20s.png">
-<meta property="og:image" content="http://qa3o5arop.bkt.clouddn.com/%60FX11%28%40G%28EW1%29%5BK9%25_GQ%24CF.png">
+<meta property="og:image" content="http://qc0437dw2.bkt.clouddn.com/oauth.png">
+<meta property="og:image" content="http://qc0437dw2.bkt.clouddn.com/hexo%20s.png">
+<meta property="og:image" content="http://qc0437dw2.bkt.clouddn.com/%60FX11%28%40G%28EW1%29%5BK9%25_GQ%24CF.png">
 <meta property="article:published_time" content="2020-04-28T06:11:39.000Z">
-<meta property="article:modified_time" content="2020-05-10T07:19:07.455Z">
+<meta property="article:modified_time" content="2020-06-16T04:56:19.520Z">
 <meta property="article:author" content="花泽菠菜Karry">
 <meta property="article:tag" content="小工具">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="yilia">
 <meta property="article:tag" content="tag">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qa3o5arop.bkt.clouddn.com/oauth.png">
+<meta name="twitter:image" content="http://qc0437dw2.bkt.clouddn.com/oauth.png">
   
     <link rel="alternative" href="/atom.xml" title="花泽菠菜Karry" type="application/atom+xml">
   
@@ -223,15 +223,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Gitment 是基于 GitHub Issues 的评论系统</p>
-<h1 id="1、注册auth-application"><a href="#1、注册auth-application" class="headerlink" title="1、注册auth application"></a>1、注册auth application</h1><p><img src="http://qa3o5arop.bkt.clouddn.com/oauth.png" alt><br>填写完毕后点击Register application 跳转到另外一个界面，这里可以得到一个<br>Client ID和Client Secret</p>
+<h1 id="1、注册auth-application"><a href="#1、注册auth-application" class="headerlink" title="1、注册auth application"></a>1、注册auth application</h1><p><img src="http://qc0437dw2.bkt.clouddn.com/oauth.png" alt><br>填写完毕后点击Register application 跳转到另外一个界面，这里可以得到一个<br>Client ID和Client Secret</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Application name:博客名字</span><br><span class="line">Homepage URL; 网站主页地址(这里我填写的是域名&#x2F;index.html大部分的默认网页都是index.html)</span><br><span class="line">Application description:描述，选填</span><br><span class="line">Authorization callback URL: 填写域名就行了</span><br><span class="line">填写完毕后点击Register application 跳转到另外一个界面，这里可以得到一个</span><br><span class="line">Client ID和Client Secret</span><br></pre></td></tr></table></figure>
-<h1 id="2、修改-config-yml"><a href="#2、修改-config-yml" class="headerlink" title="2、修改_config.yml"></a>2、修改_config.yml</h1><p>注意这里的_config.yml是主题下的配置文件<br><img src="http://qa3o5arop.bkt.clouddn.com/hexo%20s.png" alt></p>
+<h1 id="2、修改-config-yml"><a href="#2、修改-config-yml" class="headerlink" title="2、修改_config.yml"></a>2、修改_config.yml</h1><p>注意这里的_config.yml是主题下的配置文件<br><img src="http://qc0437dw2.bkt.clouddn.com/hexo%20s.png" alt></p>
 <h1 id="3、评论配置"><a href="#3、评论配置" class="headerlink" title="3、评论配置"></a>3、评论配置</h1><p>打开themes\yilia\layout_partial\post\gitment.ejs将</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;&#x2F;&#x2F;imsun.github.io&#x2F;gitment&#x2F;style&#x2F;default.css&quot;&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;&#x2F;&#x2F;imsun.github.io&#x2F;gitment&#x2F;dist&#x2F;gitment.browser.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>修改为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;jjeejj.github.io&#x2F;css&#x2F;gitment.css&quot;&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;www.wenjunjiang.win&#x2F;js&#x2F;gitment.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="4、验证"><a href="#4、验证" class="headerlink" title="4、验证"></a>4、验证</h1><p>github账号登录点击初始化按钮这样就能评论了</p>
-<p><img src="http://qa3o5arop.bkt.clouddn.com/%60FX11%28%40G%28EW1%29%5BK9%25_GQ%24CF.png" alt></p>
+<p><img src="http://qc0437dw2.bkt.clouddn.com/%60FX11%28%40G%28EW1%29%5BK9%25_GQ%24CF.png" alt></p>
 
       
 
