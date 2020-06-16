@@ -65,7 +65,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 10
+			总文章数 11
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -222,6 +222,149 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/09/%E6%94%BE%E6%9D%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/16/%E5%BC%80%E5%8F%91%E6%9D%BF/">开发板介绍以及使用</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+
+
+
+        
+        <a href="/2020/06/16/%E5%BC%80%E5%8F%91%E6%9D%BF/" class="archive-article-date">
+  	<time datetime="2020-06-16T12:10:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+</a>
+        
+        
+      </header>
+    
+
+    
+
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、通电方式"><a href="#一、通电方式" class="headerlink" title="一、通电方式"></a>一、通电方式</h1><h2 id="1、板子自带电池"><a href="#1、板子自带电池" class="headerlink" title="1、板子自带电池"></a>1、板子自带电池</h2><ul>
+<li>电池装进去 电池上的白色插头与BBC板子白色插座链接，板子会亮起hello和箭头表示链接成功！</li>
+</ul>
+<h2 id="2、板子链接电脑"><a href="#2、板子链接电脑" class="headerlink" title="2、板子链接电脑"></a>2、板子链接电脑</h2><ul>
+<li>想要随身获取数据进行实验，要把电脑设备和板子链接<h1 id="二、环境准备"><a href="#二、环境准备" class="headerlink" title="二、环境准备"></a>二、环境准备</h1><h2 id="1、确认本机上是否有蓝牙装备"><a href="#1、确认本机上是否有蓝牙装备" class="headerlink" title="1、确认本机上是否有蓝牙装备"></a>1、确认本机上是否有蓝牙装备</h2></li>
+<li>在电脑桌面开始按钮的搜索框里输入bluetooth回车搜索，看蓝牙设备是否打开。</li>
+<li>在谷歌浏览器中输入 chrome://bluetooth-internals发现周边蓝牙设备。出现如下现象则表明你的设备硬件软件都是有的<br><img src="http://qc0437dw2.bkt.clouddn.com/11.png" alt><h2 id="2、检查电脑和浏览器版本"><a href="#2、检查电脑和浏览器版本" class="headerlink" title="2、检查电脑和浏览器版本"></a>2、检查电脑和浏览器版本</h2></li>
+<li>检查谷歌浏览器是否在70.0.3526.0及以上版本</li>
+<li>检查本机系统是否在 windows 10的1703级以上<br>提示:win+R打开窗口输入winver查看<h1 id="三、固件下载到开发板"><a href="#三、固件下载到开发板" class="headerlink" title="三、固件下载到开发板"></a>三、固件下载到开发板</h1><h2 id="1、编写一个html文件并用谷歌浏览器打开打开后配对"><a href="#1、编写一个html文件并用谷歌浏览器打开打开后配对" class="headerlink" title="1、编写一个html文件并用谷歌浏览器打开打开后配对"></a>1、编写一个html文件并用谷歌浏览器打开打开后配对</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		var   selected_device;  &#x2F;&#x2F;保存用户选择的蓝牙设备</span><br><span class="line">		var  connected_server;  &#x2F;&#x2F;保存用户链接的蓝牙设备</span><br><span class="line">		function discoverDevices()</span><br><span class="line">		&#123;</span><br><span class="line">			console.log(&quot;discoverDevices&quot;);</span><br><span class="line">			var options &#x3D; &#123;acceptAllDevices:true&#125;</span><br><span class="line">			navigator.bluetooth.requestDevice(options)</span><br><span class="line">			.then(device &#x3D;&gt;&#123;</span><br><span class="line">				  console.log (&#39;&gt; Name:&#39; + device.name);</span><br><span class="line">				  console.log (&#39;&gt; ID:&#39; + device.id);</span><br><span class="line">				  console.log (&#39;&gt; Connected:&#39; + device.gatt.connected);</span><br><span class="line">				  selected_device &#x3D; device;</span><br><span class="line">				  console.log(selected_device);</span><br><span class="line">				  connect();</span><br><span class="line">				  &#125;)</span><br><span class="line">			. catch(error &#x3D;&gt; &#123;</span><br><span class="line">				   alert(&#39;ERROR:&#39; +error);</span><br><span class="line">				   console.log(&#39; ERROR:&#39; + error); </span><br><span class="line">			  &#125;);</span><br><span class="line">	</span><br><span class="line">		&#125;</span><br><span class="line">		function connect()</span><br><span class="line">		&#123;</span><br><span class="line">			console.log(&quot;connecting&quot;);</span><br><span class="line">			selected_device.gatt.connect()</span><br><span class="line">			.then(</span><br><span class="line">				function(server)  &#x2F;&#x2F;表示链接成功</span><br><span class="line">				&#123;</span><br><span class="line">					console.log(&quot;Connected to&quot; + server.device.id);</span><br><span class="line">					console.log(&quot;Connected&#x3D;&quot; + server.connected);</span><br><span class="line">					connected_server &#x3D; server;</span><br><span class="line">				&#125;,</span><br><span class="line">				function (error)  &#x2F;&#x2F;表示链接失败</span><br><span class="line">				&#123;</span><br><span class="line">					console.log(&quot;ERROR:could not connct-&quot; + error);</span><br><span class="line">					alert(&quot;ERROR:could not connct-&quot; + error)</span><br><span class="line">				&#125;</span><br><span class="line">			)</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;&#x2F;script&gt;</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h2&gt;</span><br><span class="line">			Device Discovery</span><br><span class="line">		&lt;&#x2F;h2&gt;</span><br><span class="line">		&lt;button id&#x3D;&quot;btn_scan&quot; onclick&#x3D;&quot;discoverDevices()&quot;&gt; Start scan</span><br><span class="line">		&lt;&#x2F;button&gt;</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">	&lt;&#x2F;html&gt;</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">![](http:&#x2F;&#x2F;qc0437dw2.bkt.clouddn.com&#x2F;22.png)</span><br><span class="line">## 配对成功之后浏览器中会出现 Connect&#x3D;true 和蓝牙标志</span><br><span class="line">![](http:&#x2F;&#x2F;qc0437dw2.bkt.clouddn.com&#x2F;33.png)</span><br><span class="line">![](http:&#x2F;&#x2F;qc0437dw2.bkt.clouddn.com&#x2F;44.png)</span><br><span class="line">## 2、完善程序</span><br><span class="line">- 显示蓝牙当前连接状态的函数function</span><br></pre></td></tr></table></figure>
+function setConnectedStatus(status)  //设置电脑蓝牙当前的状态<br>  {<pre><code>connected = status;
+document.getElementById(&apos;status_connected&apos;).innerHTML = status;
+if(status == true )
+{
+    document.getElementById(&apos;btn_scan&apos;).innerHTML = &quot;Disconnect&quot;;
+}
+else
+{
+    document.getElementById(&apos;btn_scan&apos;).innerHTML = &quot;Discover Devices&quot;;
+}</code></pre>  }</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 显示的一列两行表格</span><br></pre></td></tr></table></figure>
+ <h2>
+        Status  <!--显示蓝牙状态-->
+    </h2>
+    <table border="1">
+        <tr>
+            <td>  <!--表格第一行-->
+                <b>Connected</b>
+            </td>
+        </tr>  
+        <tr>  <!--表格第二行-->
+            <td id="status_connected">false</td>
+        </tr> 
+    </table>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-  添加完程序后，发现Connected由false变成了true，链接按钮变成了断开按钮并且板子上出现字母C~ </span><br><span class="line">## 3、断开</span><br><span class="line">- 继上一步的断开的按钮（Disconnect），会发现没有反应，所以我们要添加一个控制断开的函数如下：</span><br></pre></td></tr></table></figure>
+<p>function discoverOrdisconnectDevices()<br>    {<br>        console.log(“discoverDevicesOrDisconnect”);<br>        if(!connected)<br>          discoverDevices();<br>        else<br>        {<br>            selected_device.gatt.disconnect();  //断开连接<br>        }<br>    }</p>
+<pre><code>- 再次点击断开按钮（Disconnect），BBC板子上就会出现字母 D~
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tag</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/16/%E5%BC%80%E5%8F%91%E6%9D%BF/">展开全文 >></a>
         </p>
       
 
@@ -1271,152 +1414,10 @@
 
 
   
-    <article id="post-如何搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/10/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">如何搭建博客</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-
-
-
-        
-        <a href="/2020/03/10/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-03-10T11:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        
-        
-      </header>
-    
-
-    
-
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="搭建博客，前期需要四个工具"><a href="#搭建博客，前期需要四个工具" class="headerlink" title="搭建博客，前期需要四个工具"></a>搭建博客，前期需要四个工具</h3><ul>
-<li>Hexo:Hexo快速、简洁且高效的博客框架</li>
-<li>Node.js:建立在Chrome上的JavaScript运行引擎</li>
-<li>Git:一款免费、开源的分布式版本控制系统</li>
-<li>GitHub:国内一款面向开发者的云端开发平台，提供代码托管，运行空间，质量控制，项目管理等功能</li>
-</ul>
-<hr>
-<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><p>安装必要的配置环境，如果已经安装过，可以跳过</p>
-<ul>
-<li>1.1 安装Git</li>
-<li>1.2 安装Node.js</li>
-<li>1.3 GitHub账号注册</li>
-</ul>
-<p>注：安装步骤一路next即可。</p>
-<h3 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h3><ul>
-<li>CMD窗口输入命令</li>
-</ul>
-<blockquote>
-<p>npm install -g hexo</p>
-</blockquote>
-<p>安装完后选择一个目录新建文件夹blog，进入blog目录</p>
-<ul>
-<li>执行命令</li>
-</ul>
-<blockquote>
-<p>hexo init</p>
-</blockquote>
-<p>这个目录就是整个网站的根目录，以后所有的操作都在该目录下进行</p>
-<ul>
-<li>执行命令</li>
-</ul>
-<blockquote>
-<p>generate(或hexo g)</p>
-</blockquote>
-<p>生成静态页面</p>
-<ul>
-<li>再执行命令</li>
-</ul>
-<blockquote>
-<p>hexo server</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tag</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/10/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
