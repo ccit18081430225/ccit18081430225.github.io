@@ -257,6 +257,120 @@
 
 
   
+    <article id="post-启用通知" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/23/%E5%90%AF%E7%94%A8%E9%80%9A%E7%9F%A5/">BBC启用通知</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+
+
+
+        
+        <a href="/2020/06/23/%E5%90%AF%E7%94%A8%E9%80%9A%E7%9F%A5/" class="archive-article-date">
+  	<time datetime="2020-06-23T12:10:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
+</a>
+        
+        
+      </header>
+    
+
+    
+
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要续上一博文添加程序哦~</p>
+<h1 id="一、页面状态"><a href="#一、页面状态" class="headerlink" title="一、页面状态"></a>一、页面状态</h1><h3 id="1、-添加跟踪通知订阅状态的变量"><a href="#1、-添加跟踪通知订阅状态的变量" class="headerlink" title="1、 添加跟踪通知订阅状态的变量"></a>1、 添加跟踪通知订阅状态的变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var notifications_enabled &#x3D; false;</span><br></pre></td></tr></table></figure>
+<h3 id="2、添加函数把通知订阅的状态传进来，放入function-resetUI-调用，并赋给notifications-enabled。"><a href="#2、添加函数把通知订阅的状态传进来，放入function-resetUI-调用，并赋给notifications-enabled。" class="headerlink" title="2、添加函数把通知订阅的状态传进来，放入function resetUI()调用，并赋给notifications_enabled。"></a>2、添加函数把通知订阅的状态传进来，放入function resetUI()调用，并赋给notifications_enabled。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function setNotificationsStatus(status) </span><br><span class="line"> &#123;        </span><br><span class="line">     notifications_enabled &#x3D; status;       </span><br><span class="line">      document.getElementById(&#39;status_notifications&#39;).innerHTML &#x3D; status;</span><br><span class="line"> &#125; </span><br><span class="line">function resetUI()</span><br><span class="line">    &#123;          </span><br><span class="line">        setConnectedStatus(false);</span><br><span class="line">        setDiscoveryStatus(false);</span><br><span class="line">        setNotificationsStatus(false);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二、验证"><a href="#二、验证" class="headerlink" title="二、验证"></a>二、验证</h2><h3 id="1、-验证订阅计数据通知的代码"><a href="#1、-验证订阅计数据通知的代码" class="headerlink" title="1、 验证订阅计数据通知的代码"></a>1、 验证订阅计数据通知的代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function toggleAccelerometerNotifications() &#123; </span><br><span class="line">		console.log(&quot;toggleAccelerometerNotifications&quot;); </span><br><span class="line">		if (!connected) &#123; </span><br><span class="line">			alert(&quot;Error: Discover and connect to a device before using this function&quot;);  </span><br><span class="line">			return;  </span><br><span class="line">		&#125; </span><br><span class="line">		if (!services_discovered) &#123; </span><br><span class="line">			alert(&quot;Error: Service discovery has not yet completed&quot;); </span><br><span class="line">			return; </span><br><span class="line">		&#125;  </span><br><span class="line">		if (!has_accelerometer_service) &#123;  </span><br><span class="line">			alert(&quot;Error: The connected device does not contain the accelerometer service&quot;);  </span><br><span class="line">			return;</span><br><span class="line">		&#125; </span><br><span class="line">		if (!has_accelerometer_data) &#123;  </span><br><span class="line">			alert(&quot;Error: The connected device does not contain the accelerometer data characteristic&quot;);   return; </span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、启用禁用和通知事件"><a href="#三、启用禁用和通知事件" class="headerlink" title="三、启用禁用和通知事件"></a>三、启用禁用和通知事件</h2><h3 id="1、-判断启用禁用和通知"><a href="#1、-判断启用禁用和通知" class="headerlink" title="1、 判断启用禁用和通知"></a>1、 判断启用禁用和通知</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">if (!notifications_enabled) &#123;  </span><br><span class="line">		accelerometer_data.startNotifications()</span><br><span class="line">			.then(_ &#x3D;&gt; &#123; </span><br><span class="line">			console.log(&#39;accelerometer notifications started&#39;);  </span><br><span class="line">			setNotificationsStatus(true); </span><br><span class="line">			accelerometer_data.addEventListener(&#39;characteristicvaluechanged&#39;, onAccelerometerData); </span><br><span class="line">		&#125;)  </span><br><span class="line">			.catch(error &#x3D;&gt; &#123; </span><br><span class="line">			console.log(&#39;Error: &#39; + error);   </span><br><span class="line">			alert(&#39;Error: &#39; + error);  </span><br><span class="line">			return;  </span><br><span class="line">		&#125;); </span><br><span class="line">	&#125; </span><br><span class="line">		else</span><br><span class="line">		&#123; </span><br><span class="line">			accelerometer_data.stopNotifications()  </span><br><span class="line">				.then(_ &#x3D;&gt; &#123;  </span><br><span class="line">				console.log(&#39;accelerometer notifications stopped&#39;);  </span><br><span class="line">				setNotificationsStatus(false); </span><br><span class="line">				accelerometer_data.removeEventListener(&#39;characteristicvaluechanged&#39;, onAccelerometerData); </span><br><span class="line">			&#125;)   </span><br><span class="line">				.catch(error &#x3D;&gt; &#123;  </span><br><span class="line">				console.log(&#39;Could not stop accelerometer_data notifications: &#39; + error);  </span><br><span class="line">			&#125;); </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四、处理通知"><a href="#四、处理通知" class="headerlink" title="四、处理通知"></a>四、处理通知</h2><h3 id="1、-处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。"><a href="#1、-处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。" class="headerlink" title="1、 处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。"></a>1、 处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function onAccelerometerData(event) &#123; </span><br><span class="line">	 console.log(&quot;onAccelerometerData&quot;);</span><br><span class="line">	 buffer &#x3D; event.target.value.buffer; </span><br><span class="line">	 dataview &#x3D; new DataView(buffer); </span><br><span class="line">	 X &#x3D; dataview.getUint16(0, true); </span><br><span class="line">	 Y &#x3D; dataview.getUint16(2, true); </span><br><span class="line">	 Z &#x3D; dataview.getUint16(4, true);  </span><br><span class="line">	 console.log(&quot;X&#x3D;&quot; + X + &quot;, Y&#x3D;&quot; + Y + &quot;, Z+&quot; + Z);  document.getElementById(&quot;accelerometer_data&quot;).innerHTML &#x3D; &quot;X&#x3D;&quot; + X + &quot;, Y&#x3D;&quot; + Y + &quot;, Z&#x3D;&quot; + Z; &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><blockquote>
+<p>点击Toggle Notifications  X Y Z 结果一直变化最终为X=65488 Y=156 Z=64554</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tag</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/23/%E5%90%AF%E7%94%A8%E9%80%9A%E7%9F%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-BBC写特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -470,120 +584,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/06/19/%E6%9C%8D%E5%8A%A1%E7%89%B9%E6%80%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-启用通知" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/16/%E5%90%AF%E7%94%A8%E9%80%9A%E7%9F%A5/">BBC启用通知</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-
-
-
-        
-        <a href="/2020/06/16/%E5%90%AF%E7%94%A8%E9%80%9A%E7%9F%A5/" class="archive-article-date">
-  	<time datetime="2020-06-16T12:10:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
-</a>
-        
-        
-      </header>
-    
-
-    
-
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>要续上一博文添加程序哦~</p>
-<h1 id="一、页面状态"><a href="#一、页面状态" class="headerlink" title="一、页面状态"></a>一、页面状态</h1><h3 id="1、-添加跟踪通知订阅状态的变量"><a href="#1、-添加跟踪通知订阅状态的变量" class="headerlink" title="1、 添加跟踪通知订阅状态的变量"></a>1、 添加跟踪通知订阅状态的变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var notifications_enabled &#x3D; false;</span><br></pre></td></tr></table></figure>
-<h3 id="2、添加函数把通知订阅的状态传进来，放入function-resetUI-调用，并赋给notifications-enabled。"><a href="#2、添加函数把通知订阅的状态传进来，放入function-resetUI-调用，并赋给notifications-enabled。" class="headerlink" title="2、添加函数把通知订阅的状态传进来，放入function resetUI()调用，并赋给notifications_enabled。"></a>2、添加函数把通知订阅的状态传进来，放入function resetUI()调用，并赋给notifications_enabled。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function setNotificationsStatus(status) </span><br><span class="line"> &#123;        </span><br><span class="line">     notifications_enabled &#x3D; status;       </span><br><span class="line">      document.getElementById(&#39;status_notifications&#39;).innerHTML &#x3D; status;</span><br><span class="line"> &#125; </span><br><span class="line">function resetUI()</span><br><span class="line">    &#123;          </span><br><span class="line">        setConnectedStatus(false);</span><br><span class="line">        setDiscoveryStatus(false);</span><br><span class="line">        setNotificationsStatus(false);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二、验证"><a href="#二、验证" class="headerlink" title="二、验证"></a>二、验证</h2><h3 id="1、-验证订阅计数据通知的代码"><a href="#1、-验证订阅计数据通知的代码" class="headerlink" title="1、 验证订阅计数据通知的代码"></a>1、 验证订阅计数据通知的代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function toggleAccelerometerNotifications() &#123; </span><br><span class="line">		console.log(&quot;toggleAccelerometerNotifications&quot;); </span><br><span class="line">		if (!connected) &#123; </span><br><span class="line">			alert(&quot;Error: Discover and connect to a device before using this function&quot;);  </span><br><span class="line">			return;  </span><br><span class="line">		&#125; </span><br><span class="line">		if (!services_discovered) &#123; </span><br><span class="line">			alert(&quot;Error: Service discovery has not yet completed&quot;); </span><br><span class="line">			return; </span><br><span class="line">		&#125;  </span><br><span class="line">		if (!has_accelerometer_service) &#123;  </span><br><span class="line">			alert(&quot;Error: The connected device does not contain the accelerometer service&quot;);  </span><br><span class="line">			return;</span><br><span class="line">		&#125; </span><br><span class="line">		if (!has_accelerometer_data) &#123;  </span><br><span class="line">			alert(&quot;Error: The connected device does not contain the accelerometer data characteristic&quot;);   return; </span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="三、启用禁用和通知事件"><a href="#三、启用禁用和通知事件" class="headerlink" title="三、启用禁用和通知事件"></a>三、启用禁用和通知事件</h2><h3 id="1、-判断启用禁用和通知"><a href="#1、-判断启用禁用和通知" class="headerlink" title="1、 判断启用禁用和通知"></a>1、 判断启用禁用和通知</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">if (!notifications_enabled) &#123;  </span><br><span class="line">		accelerometer_data.startNotifications()</span><br><span class="line">			.then(_ &#x3D;&gt; &#123; </span><br><span class="line">			console.log(&#39;accelerometer notifications started&#39;);  </span><br><span class="line">			setNotificationsStatus(true); </span><br><span class="line">			accelerometer_data.addEventListener(&#39;characteristicvaluechanged&#39;, onAccelerometerData); </span><br><span class="line">		&#125;)  </span><br><span class="line">			.catch(error &#x3D;&gt; &#123; </span><br><span class="line">			console.log(&#39;Error: &#39; + error);   </span><br><span class="line">			alert(&#39;Error: &#39; + error);  </span><br><span class="line">			return;  </span><br><span class="line">		&#125;); </span><br><span class="line">	&#125; </span><br><span class="line">		else</span><br><span class="line">		&#123; </span><br><span class="line">			accelerometer_data.stopNotifications()  </span><br><span class="line">				.then(_ &#x3D;&gt; &#123;  </span><br><span class="line">				console.log(&#39;accelerometer notifications stopped&#39;);  </span><br><span class="line">				setNotificationsStatus(false); </span><br><span class="line">				accelerometer_data.removeEventListener(&#39;characteristicvaluechanged&#39;, onAccelerometerData); </span><br><span class="line">			&#125;)   </span><br><span class="line">				.catch(error &#x3D;&gt; &#123;  </span><br><span class="line">				console.log(&#39;Could not stop accelerometer_data notifications: &#39; + error);  </span><br><span class="line">			&#125;); </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="四、处理通知"><a href="#四、处理通知" class="headerlink" title="四、处理通知"></a>四、处理通知</h2><h3 id="1、-处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。"><a href="#1、-处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。" class="headerlink" title="1、 处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。"></a>1、 处理程序接收的事件对象，将附加到事件对象目标值的ArrayBuffer中。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function onAccelerometerData(event) &#123; </span><br><span class="line">	 console.log(&quot;onAccelerometerData&quot;);</span><br><span class="line">	 buffer &#x3D; event.target.value.buffer; </span><br><span class="line">	 dataview &#x3D; new DataView(buffer); </span><br><span class="line">	 X &#x3D; dataview.getUint16(0, true); </span><br><span class="line">	 Y &#x3D; dataview.getUint16(2, true); </span><br><span class="line">	 Z &#x3D; dataview.getUint16(4, true);  </span><br><span class="line">	 console.log(&quot;X&#x3D;&quot; + X + &quot;, Y&#x3D;&quot; + Y + &quot;, Z+&quot; + Z);  document.getElementById(&quot;accelerometer_data&quot;).innerHTML &#x3D; &quot;X&#x3D;&quot; + X + &quot;, Y&#x3D;&quot; + Y + &quot;, Z&#x3D;&quot; + Z; &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><blockquote>
-<p>点击Toggle Notifications  X Y Z 结果一直变化最终为X=65488 Y=156 Z=64554</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tag</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/16/%E5%90%AF%E7%94%A8%E9%80%9A%E7%9F%A5/">展开全文 >></a>
         </p>
       
 
